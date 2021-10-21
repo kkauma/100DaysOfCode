@@ -1,16 +1,52 @@
-# This is a sample Python script.
+# Coffee Machine Project
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+MENU = {
+    "espresso": {
+        "ingredients": {
+            "water": 50,
+            "coffee": 18,
+        },
+        "cost": 1.5,
+    },
+    "latte": {
+        "ingredients": {
+            "water": 200,
+            "milk": 150,
+            "coffee": 24,
+        },
+        "cost": 2.5,
+    },
+    "cappuccino": {
+        "ingredients": {
+            "water": 250,
+            "milk": 100,
+            "coffee": 24,
+        },
+        "cost": 3.0,
+    }
+}
 
+resources = {
+    "water": 300,
+    "milk": 200,
+    "coffee": 100,
+    "money": 0.0,
+}
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+# TODO: 1. Print report of all coffee machine resources
 
+user_input = str(input("What would you like? (espresso/latte/cappuccino): "))
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+if user_input == "report":
+    print(f"Water: {resources['water']}ml")
+    print(f"Milk: {resources['milk']}ml")
+    print(f"Coffee: {resources['coffee']}g")
+    print(f"Money: ${resources['money']}")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+elif user_input == "espresso":
+    if resources["water"] < 50:
+        print("Sorry, there isn't enough water to make this drink.")
+    elif resources["coffee"] < 18:
+        print("Sorry, there isn't enough coffee to make this drink.")
+    else:
+        print("Espresso coming right up!")
