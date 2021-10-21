@@ -42,3 +42,11 @@ if user_input == "report":
     print(f"Milk: {resources['milk']}ml")
     print(f"Coffee: {resources['coffee']}g")
     print(f"Money: ${resources['money']}")
+
+elif user_input == "espresso":
+    if resources["water"] < 50:
+        print("Sorry, there isn't enough water to make this drink.")
+    elif resources["coffee"] < 18:
+        print("Sorry, there isn't enough coffee to make this drink.")
+    else:
+        print("Espresso coming right up!")
