@@ -30,10 +30,15 @@ resources = {
     "water": 300,
     "milk": 200,
     "coffee": 100,
+    "money": 0.0,
 }
 
 # TODO: 1. Print report of all coffee machine resources
 
+user_input = str(input("What would you like? (espress/latte/cappucino): "))
 
-
-user_response = str(input("What would "))
+if user_input == "report":
+    print(f"Water: {resources['water']}ml")
+    print(f"Milk: {resources['milk']}ml")
+    print(f"Coffee: {resources['coffee']}g")
+    print(f"Money: ${resources['money']}")
