@@ -60,10 +60,17 @@ while True:
             pennies = int(input("How many pennies?: ")) * .01
 
             user_money = quarters + dimes + nickles + pennies
+            drink_cost = MENU["espresso"]["cost"]
+            change = user_money - drink_cost
 
-            change = MENU["espresso"]["cost"]
-
-            print(f"Here is {change} in change.")
-            print(f"Here is your {user_input} ☕️ Enjoy!")
+            if change < 0:
+                print("Sorry that's not enough money. Money refunded.")
+            else:
+                print(f"Here is {change} in change.")
+                print(f"Here is your {user_input} ☕️ Enjoy!")
 
             current_money = resources["money"]
+            current_money += drink_cost
+            print(current_money)
+
+# TODO: 2. Add code for latte
