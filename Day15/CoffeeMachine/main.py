@@ -49,13 +49,15 @@ def ask_for_coins():
     pennies = int(input("How many pennies?: ")) * .01
 
 
-while True:
+is_on = True
+
+while is_on:
 
     user_input = str(input("What would you like? (espresso/latte/cappuccino): "))
 
     # For maintainers of coffee machine to exit program
     if user_input == "off":
-        break
+        is_on = False
 
     # TODO: 1. Print report of all coffee machine resources
     print_report()
