@@ -42,18 +42,22 @@ def print_report():
 
 
 def is_resource_sufficient(order_ingredients):
+    """Returns True when order can be made and False if ingredients are insufficient."""
     for item in order_ingredients:
         if order_ingredients[item] >= resources[item]:
-            print("Sorry there isn't enough water.")
+            print(f"Sorry there isn't enough {item}.")
+            return False
+        return True
 
 
 def ask_for_coins():
+    """Returns the total calculated from coins inserted"""
     print("Please insert coins")
-    quarters = int(input("How many quarters?: ")) * .25
-    dimes = int(input("How many dimes?: ")) * .1
-    nickles = int(input("How many nickles?: ")) * .05
-    pennies = int(input("How many pennies?: ")) * .01
-
+    total = int(input("How many quarters?: ")) * .25
+    total += int(input("How many dimes?: ")) * .1
+    total += int(input("How many nickles?: ")) * .05
+    total += int(input("How many pennies?: ")) * .01
+    return total
 
 is_on = True
 
@@ -65,4 +69,5 @@ while is_on:
         print_report()
     else:
         drink = MENU[user_input]
-        is_resource_sufficient(drink["ingredients"])
+        if is_resource_sufficient(drink["ingredients"]):
+            ask_for_coins()
