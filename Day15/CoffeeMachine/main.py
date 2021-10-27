@@ -59,6 +59,7 @@ def ask_for_coins():
     total += int(input("How many pennies?: ")) * .01
     return total
 
+
 is_on = True
 
 while is_on:
@@ -70,4 +71,4 @@ while is_on:
     else:
         drink = MENU[user_input]
         if is_resource_sufficient(drink["ingredients"]):
-            ask_for_coins()
+            payment = ask_for_coins()
