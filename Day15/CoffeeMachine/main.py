@@ -38,7 +38,7 @@ def print_report():
     print(f"Water: {resources['water']}ml")
     print(f"Milk: {resources['milk']}ml")
     print(f"Coffee: {resources['coffee']}g")
-    print(f"Money: ${resources['money']}")
+    print(f"Money: ${profit}")
 
 
 def is_resource_sufficient(order_ingredients):
@@ -85,3 +85,4 @@ while is_on:
         drink = MENU[user_input]
         if is_resource_sufficient(drink["ingredients"]):
             payment = ask_for_coins()
+            is_transaction_successful(payment, drink["cost"])
