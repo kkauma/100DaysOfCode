@@ -26,11 +26,11 @@ MENU = {
     }
 }
 
+profit = 0
 resources = {
     "water": 300,
     "milk": 200,
     "coffee": 100,
-    "money": 0.0,
 }
 
 
@@ -58,6 +58,19 @@ def ask_for_coins():
     total += int(input("How many nickles?: ")) * .05
     total += int(input("How many pennies?: ")) * .01
     return total
+
+
+def is_transaction_successful(money_received, drink_cost):
+    """Return True when the payment is accepted, or False if money is insufficient."""
+    if money_received >= drink_cost:
+        change = round(money_received - drink_cost, 2)
+        print(f"Here is ${change} in change.")
+        global profit
+        profit += drink_cost
+        return True
+    else:
+        print("Sorry that's not enough money. Money refunded.")
+        return False
 
 
 is_on = True
