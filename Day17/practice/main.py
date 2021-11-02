@@ -1,12 +1,14 @@
 # OOP and creating classes in Python
 # Init is called for every instance a class that gets created
 
+# User class built with OOP, add methods and attributes
 class User:
     def __init__(self, user_id, username):
         self.id = user_id
         self.username = username
         self.followers = 0
         self.following = 0
+
 
     def say_hi(self):
         return f"Hello, {self.username}! Welcome to the metaverse."
