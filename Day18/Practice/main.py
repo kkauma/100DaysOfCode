@@ -8,6 +8,7 @@ colors = ["green", "red", "blue", "orange", "wheat", "magenta",
           "DarkOrchid", "DeepSkyBlue"]
 directions = [0, 90, 180, 270]
 tim.pensize(15)
+tim.speed("fastest")
 
 # Draw a Random Walk - Challenge
 for _ in range(200):
