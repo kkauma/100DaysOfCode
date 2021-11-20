@@ -7,9 +7,11 @@ tim = t.Turtle()
 colors = ["green", "red", "blue", "orange", "wheat", "magenta",
           "DarkOrchid", "DeepSkyBlue"]
 directions = [0, 90, 180, 270]
+tim.pensize(15)
 
 # Draw a Random Walk - Challenge
 for _ in range(200):
+    tim.color(random.choice(colors))
     tim.forward(30)
     tim.setheading(random.choice(directions))
 
