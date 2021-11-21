@@ -16,11 +16,14 @@ def random_color():
 
 tim.speed("fastest")
 
-for _ in range(100):
-    tim.color(random_color())
-    tim.circle(100)
-    tim.setheading(tim.heading() + 10)
-    tim.circle(100)
+
+def draw_spirograph(size_of_gap):
+    for _ in range(100):
+        tim.color(random_color())
+        tim.circle(100)
+        tim.setheading(tim.heading() + 10)
+        tim.circle(100)
+
 
 screen = t.Screen()
 screen.exitonclick()
