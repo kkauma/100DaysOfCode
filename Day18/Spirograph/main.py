@@ -18,12 +18,13 @@ tim.speed("fastest")
 
 
 def draw_spirograph(size_of_gap):
-    for _ in range(100):
+    for _ in range(int(360 / size_of_gap)):
         tim.color(random_color())
         tim.circle(100)
-        tim.setheading(tim.heading() + 10)
-        tim.circle(100)
+        tim.setheading(tim.heading() + size_of_gap)
 
+
+draw_spirograph(5)
 
 screen = t.Screen()
 screen.exitonclick()
