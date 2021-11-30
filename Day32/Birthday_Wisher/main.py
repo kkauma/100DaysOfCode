@@ -1,7 +1,8 @@
 # Birthday Wisher Project
 
 import smtplib
-import datetime as dt
+from datetime import datetime
 
+today = (datetime.now().month, datetime.now().day)
 
 
