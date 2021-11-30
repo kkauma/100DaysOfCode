@@ -5,6 +5,9 @@ import pandas
 import random
 from datetime import datetime
 
+MY_EMAIL = "cometfunds@gmail.com"
+MY_PASSWORD = "HelloWorld19"
+
 today = (datetime.now().month, datetime.now().day)
 
 data = pandas.read_csv("birthdays.csv")
@@ -16,3 +19,12 @@ if today in birthdays_dict:
     with open(file_path) as letter_file:
         contents = letter_file.read()
         contents.replace("[NAME]", birthday_person["name"])
+
+    with smtplib.SMTP("smtp.gmail.com", 587) as connection:
+        connection.starttls()
+        connection.login(MY_EMAIL, MY_PASSWORD)
+        connection.sendmail(
+            from_addr=MY_EMAIL,
+            to_addrs=birthday_person["email"],
+            msg=f"Subject:Happy Birthday!\n\n{contents}"
+        )
