@@ -20,4 +20,5 @@ def add_new_country(country, visits, cities):
     travel_log.append(new_entry)
 
 add_new_country("Luxembourg", 1, ["Luxembourg City"])
+add_new_country("France", 7, ["Nice", "Ez"])
 print(travel_log)
